@@ -1,0 +1,66 @@
+{
+	"info": {
+		"name": "Currencies",
+		"_postman_id": "78e690f6-c182-e654-89c3-682bea9459a6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Currencies-List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/currencies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"currencies"
+					]
+				},
+				"description": "Listing all currencies"
+			},
+			"response": []
+		},
+		{
+			"name": "Single Currency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/currencies/CHF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"currencies",
+						"CHF"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Non existent currency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
