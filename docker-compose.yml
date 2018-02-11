@@ -1,0 +1,9 @@
+version: '3'
+services:
+  currency:
+    build:
+      context: .
+      args:
+        JAR_FILE: "target/currencies-0.0.1-SNAPSHOT.jar"
+    ports:
+     - "8080:8080"
