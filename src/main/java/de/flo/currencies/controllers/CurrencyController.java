@@ -17,13 +17,13 @@ public class CurrencyController {
     CurrencyRepository currencyRepository;
 
     @RequestMapping("/currencies")
-    @CrossOrigin(origins = "http://localhost:8081")
+    @CrossOrigin(origins = "*")
     public List<String> currencies() {
         return currencyRepository.getAllCurrencies();
     }
 
     @RequestMapping("/currencies/{symbol}")
-    @CrossOrigin(origins = "http://localhost:8081")
+    @CrossOrigin(origins = "*")
     public double currency(@PathVariable("symbol") String symbol) {
         Double value = currencyRepository.getBySymbol(symbol);
         if (value == null) {
