@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Overview',
   data () {
     return {
       loading: false,
@@ -23,12 +23,14 @@ export default {
     }
   },
   mounted () {
+    this.loading = true
     this.getData()
       .then((currencies) => {
+        this.loading = false
         this.currencies = currencies
       })
-      .catch(() => {
-        console.log('Something bad happened')
+      .catch((err) => {
+        console.error('Something bad happened', err)
       })
   },
   methods: {
