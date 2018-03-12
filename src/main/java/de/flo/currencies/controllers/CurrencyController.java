@@ -1,6 +1,7 @@
 package de.flo.currencies.controllers;
 
 import de.flo.currencies.model.CurrencyRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,11 +17,13 @@ public class CurrencyController {
     CurrencyRepository currencyRepository;
 
     @RequestMapping("/currencies")
+    @CrossOrigin(origins = "http://localhost:8081")
     public List<String> currencies() {
         return currencyRepository.getAllCurrencies();
     }
 
     @RequestMapping("/currencies/{symbol}")
+    @CrossOrigin(origins = "http://localhost:8081")
     public double currency(@PathVariable("symbol") String symbol) {
         Double value = currencyRepository.getBySymbol(symbol);
         if (value == null) {
