@@ -1,5 +1,8 @@
 <template>
   <div class="c-overview">
+    <div class="c-overview__navigation">
+      <router-link to="/calculator">Calculator</router-link>
+    </div>
     <div v-if="loading">
       Loading...
     </div>
@@ -57,6 +60,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .c-overview__symbol {
+  border-bottom: 1px solid gray;
+}
+.overview__navigation {
+  margin-bottom: 1em;
   border-bottom: 1px solid black;
 }
 </style>
